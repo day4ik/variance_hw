@@ -13,9 +13,10 @@ Just for understanding variance in scala
     and
     ```scala
     trait BiTree[+T] {
-      val value: T
-      val left: BiTree[T]
-      val right: BiTree[T]
+      def value: T
+      def left: BiTree[T]
+      def right: BiTree[T]
+      def find(v: T): Option[T]
       def add[U/*Think about bound here*/](value: U)(implicit ord: ContrVOrdering[U]): BiTree[U]
     }
     ```
